@@ -1,50 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Skyture Calculator</title>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-N9WVYMW6V4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Universal Calculator</title>
+<link rel="stylesheet" href="style.css" />
 
-  gtag('config', 'G-N9WVYMW6V4');
-</script>
+
+
+
+
+   <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N9WVYMW6V4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-N9WVYMW6V4');
+  </script>
+
+
+
+
+
+
+
+
+
+
+
 </head>
 <body>
-    <div class="title">Skyture Calculator (First version)</div>
+  <div class="calculator">
 
-<link rel="stylesheet" href="style.css">
- <form name="calculator">
-  <input type="text" name="display" disabled>
+    <input type="text" id="display" disabled placeholder="0" />
 
-  <div class="buttons">
-    <input type="button" value="7">
-    <input type="button" value="8">
-    <input type="button" value="9">
-    <input type="button" value="/">
+    <div class="buttons">
+      <!-- Basic -->
+      <button class="clear" data-value="C">AC</button>
+      <button class="delete" data-value="DEL">DEL</button>
+      <button data-value="(">(</button>
+      <button data-value=")">)</button>
+      <button class="operator" data-value="/">÷</button>
+      <button class="operator" data-value="*">×</button>
 
-    <input type="button" value="4">
-    <input type="button" value="5">
-    <input type="button" value="6">
-    <input type="button" value="*">
+      <button data-value="7">7</button>
+      <button data-value="8">8</button>
+      <button data-value="9">9</button>
+      <button class="operator" data-value="-">−</button>
+      <button data-value="π">π</button>
+      <button data-value="e">e</button>
 
-    <input type="button" value="1">
-    <input type="button" value="2">
-    <input type="button" value="3">
-    <input type="button" value="-">
+      <button data-value="4">4</button>
+      <button data-value="5">5</button>
+      <button data-value="6">6</button>
+      <button class="operator" data-value="+">+</button>
+      <button data-value="^">xʸ</button>
+      <button data-value="√">√</button>
 
-    <input type="button" value="0">
-    <input type="button" value=".">
-    <input type="button" value="=">
-    <input type="button" value="+">
+      <button data-value="1">1</button>
+      <button data-value="2">2</button>
+      <button data-value="3">3</button>
+      <button data-value=".">.</button>
+      <button data-value="sin">sin</button>
+      <button data-value="cos">cos</button>
 
-    <input type="button" value="C">
+      <button data-value="0">0</button>
+      <button data-value="±">±</button>
+      <button class="operator" data-value="=">=</button>
+      <button data-value="tan">tan</button>
+      <button data-value="log">log</button>
+      <button data-value="ln">ln</button>
+
+      <!-- Financial / Statistics / Programming -->
+      <button data-value="PV">PV</button>
+      <button data-value="FV">FV</button>
+      <button data-value="PMT">PMT</button>
+      <button data-value="NPV">NPV</button>
+      <button data-value="Σ+">Σ+</button>
+      <button data-value="Σ-">Σ-</button>
+      <button data-value="s">s</button>
+      <button data-value="R/S">R/S</button>
+      <button data-value="GTO">GTO</button>
+      <button data-value="BST">BST</button>
+      <button data-value="PSE">PSE</button>
+    </div>
+
+    <button id="dark-mode-toggle">Dark Mode</button>
+
+    <div class="description-box" id="description-box">
+      <h3>Symbols Description</h3>
+      <ul>
+        <li><b>AC:</b> Clear all</li>
+        <li><b>DEL:</b> Delete last character</li>
+        <li><b>÷, ×, −, +:</b> Division, Multiplication, Subtraction, Addition</li>
+        <li><b>π:</b> Pi constant (~3.14159)</li>
+        <li><b>e:</b> Euler's number (~2.718)</li>
+        <li><b>xʸ (^):</b> Power function</li>
+        <li><b>√:</b> Square root</li>
+        <li><b>sin, cos, tan:</b> Trigonometric functions</li>
+        <li><b>log:</b> Logarithm base 10</li>
+        <li><b>ln:</b> Natural logarithm</li>
+        <li><b>±:</b> Change sign</li>
+        <li><b>PV, FV, PMT, NPV:</b> Financial calculations (Present value, Future value, Payment, Net present value)</li>
+        <li><b>Σ+, Σ-:</b> Summation plus/minus</li>
+        <li><b>s:</b> Sample standard deviation</li>
+        <li><b>R/S:</b> Range/Standard deviation</li>
+        <li><b>GTO, BST, PSE:</b> Programming/statistical functions</li>
+      </ul>
+    </div>
+
   </div>
-</form>
-<script src="calculator.js"></script>
-</body>
+
+<script src="script.js"></script>
 </body>
 </html>
+
