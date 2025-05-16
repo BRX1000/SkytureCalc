@@ -1,83 +1,146 @@
+ /* Reset */
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background: url('https://www.transparenttextures.com/patterns/flowers.png'), linear-gradient(135deg, #ffe5ec, #ffc2d1);
-  background-blend-mode: overlay;
-  background-size: cover;
-  background-repeat: repeat;
+  background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
-  height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
+  align-items: flex-start;
+  padding: 20px;
+  margin: 0;
+  min-height: 100vh;
+  transition: background-color 0.3s ease;
 }
 
-/* العنوان في أعلى اليسار */
-.title {
-  position: absolute;
-  top: 10px;
-  left: 20px;
-  font-size: 30px;
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-
-form[name="calculator"] {
-  background-color: #ffffff;
-  padding: 80px;
-  border-radius: 100px;
-  box-shadow: 0PX 80px 16px rgba(0, 0, 0, 0.1);
-  width: 350px;
-  text-align: center;
-}
-
-form[name="calculator"] input[type="text"] {
+.calculator {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 30px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  max-width: 700px;
   width: 100%;
-  height: 60px;
-  font-size: 39px;
-  margin-bottom: 39px;
-  padding: 0px;
-  text-align: center;
-  border: 1px solid #ccc;
-  border-radius: 80px;
-  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  position: relative;
 }
 
-form[name="calculator"] input[type="button"] {
-  width: 70px;
-  height: 55px;
-  margin: 5px;
-  font-size: 36px;
+/* Display */
+#display {
+  width: 100%;
+  height: 90px;
+  font-size: 3rem;
+  text-align: right;
+  padding: 20px 30px;
+  border-radius: 25px;
+  border: 1px solid #bbb;
+  background-color: #fefefe;
+  color: #222;
+  user-select: none;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.07);
+  overflow-x: auto;
+}
+
+/* Buttons grid */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 15px;
+}
+
+/* General buttons */
+button {
+  font-size: 1.5rem;
+  padding: 20px 0;
+  border-radius: 25px;
   border: none;
-  border-radius: 80px;
-  background-color: lab(87.09% -6.24 -3.26);
+  background: #6c7ae0;
+  color: white;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.25s ease;
+  user-select: none;
+  box-shadow: 0 6px 12px rgba(108, 122, 224, 0.4);
 }
 
-form[name="calculator"] input[type="button"]:hover {
-  background-color: #d0d0d0;
+button:hover {
+  background-color: #5664d2;
 }
 
-form[name="calculator"] input[type="button"][value="C"] {
-  background-color: #43afda;
-  color: rgb(255, 255, 255);
+/* Operators */
+button.operator {
+  background: #3b3a69;
+  box-shadow: 0 6px 12px rgba(59, 58, 105, 0.6);
 }
 
-form[name="calculator"] input[type="button"][value="="] {
-  background-color: #363146;
-  color: rgb(255, 255, 255);
+button.operator:hover {
+  background-color: #2a2a46;
 }
 
-form[name="calculator"] input[type="button"][value="/"],
-form[name="calculator"] input[type="button"][value="*"],
-form[name="calculator"] input[type="button"][value="-"],
-form[name="calculator"] input[type="button"][value="+"] {
-  background-color: #8a82fc;
-  color: rgb(255, 255, 255);
+/* Clear */
+button.clear {
+  background: #44b8da;
+  box-shadow: 0 6px 12px rgba(68, 184, 218, 0.6);
+}
+
+button.clear:hover {
+  background-color: #3498c3;
+}
+
+/* Delete */
+button.delete {
+  background: #e94e4e;
+  box-shadow: 0 6px 12px rgba(233, 78, 78, 0.6);
+}
+
+button.delete:hover {
+  background-color: #c83b3b;
+}
+
+/* Dark Mode */
+body.dark {
+  background: #181818;
+  color: #f0f0f0;
+}
+
+body.dark .calculator {
+  background: #222;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
+}
+
+body.dark #display {
+  background-color: #333;
+  color: #f0f0f0;
+  border-color: #444;
+  box-shadow: inset 0 2px 5px rgba(255,255,255,0.1);
+}
+
+body.dark button {
+  background: #555;
+}
+
+body.dark button.operator {
+  background: #888;
+}
+
+body.dark button.clear {
+  background: #3ba0d9;
+}
+
+body.dark button.delete {
+  background: #d94a4a;
+}
+
+/* Description box */
+.description-box { 
+  background: #eef2ff;
+  border-radius: 20px;
+  padding: 20px 25px;
+  font-size: 1.1rem;
+  color: #222;
+  max 
 }
 
 
